@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/hammer.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/template.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+</head>
+<body>
+<header id="header" class="show">
+    起点小说
+</header>
+<div class="main">
+    <ul class="list">
+
+    </ul>
+</div>
+<footer id="footer" class="show">
+    <nav>
+        <a href="javascript:;" class="all">
+            <i class="fa fa-list"></i>
+            <div>目录</div>
+        </a>
+        <a href="javascript:;" class="history">
+            <i class="fa fa-eye"></i>
+            <div>历史</div>
+        </a>
+    </nav>
+</footer>
+<script id="temp" type="text/html">
+    {{each list}}
+    <li>
+        <div class="delete" data-id="{{$value.id}}">
+            删除
+        </div>
+
+        <a href="reder.html?id={{$value.id}}">
+            <div class="img">
+                <img src="{{$value.img}}" alt="">
+            </div>
+            <div class="text">
+                <h3>{{$value.title}}</h3>
+                <p><span>{{$value.section}}章节</span><span>{{$value.letter}}字</span></p>
+            </div>
+        </a>
+    </li>
+    {{/each}}
+</script>
+<script src="js/index.js">
+</script>
+</body>
+</html>

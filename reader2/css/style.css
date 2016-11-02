@@ -1,0 +1,176 @@
+*{
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    overflow: hidden;
+}
+#header,#footer{
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    background: #333;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+    opacity: 0.5;
+    height: 0;
+    z-index: 1000;
+    color:#fff;
+}
+
+#header{
+    top:0;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+}
+#header.show,#footer.show{
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+
+}
+#footer{
+    bottom: -49px;
+    height: 49px;
+    /*-webkit-transform: translateY(100%);
+    transform: translateY(100%);*/
+}
+#footer.show{
+    opacity: 1;
+   bottom: 0px;
+}
+.main{
+    padding: 15px;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+.panel{
+    position: absolute;
+    bottom:100% ;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 20px;
+    display: none;
+}
+.show .panel.open{
+    display: block;
+}
+
+.panel ul{
+    display: table;
+}
+.panel li{
+    display: table-cell;
+    vertical-align: middle;
+    padding: 15px 0;
+    color:#fff;
+}
+.panel li:first-child{
+    width: 70px;
+}
+.panel .colors a{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    margin-right: 8px;
+    background-color: rebeccapurple;
+}
+.panel .colors a.active{
+   border: 1px solid yellow;
+}
+
+
+
+#footer nav{
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+#footer nav a{
+    display: table-cell;
+    width: 33.3333%;
+    text-align: center;
+    vertical-align: middle;
+    color:#fff;
+    font-size: 16px;
+}
+#footer nav a div{
+    font-size: 12px;
+}
+#footer .bg.day .fa-moon-o{
+    display: none;
+}
+#footer .bg.day div:before{
+    content: '白天';
+}
+#footer .bg.night .fa-sun-o{
+    display: none;
+}
+#footer .bg.night div:before{
+    content: '黑夜';
+}
+.slider-container .back-bar .pointer-label{
+    background-color: transparent;
+}
+.main{
+    line-height: 1.5;
+}
+.list{
+    padding-top: 44px;
+    padding-bottom: 49px;
+    margin: 0 -15px;
+}
+.list li{
+    position: relative;
+}
+.list .delete{
+    position: absolute;
+    z-index: 0;
+    right: 0;
+    height: 100%;
+    width: 80px;
+    text-align: center;
+    line-height: 80px;
+    color:#fff;
+    font-size: 30px;
+    background-color: red;
+}
+.list a{
+    display: table;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    background-color: #fff;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+}
+.list a.edit{
+    -webkit-transform: translateX(-80px);
+    transform: translateX(-80px);
+}
+.list a>div{
+    display: table-cell;
+    vertical-align: middle;
+    padding:0 10px;
+}
+.list .img{
+    width: 70px;
+}
+.list .img img{
+    width: 100%;
+}
+.list .text{
+    border-bottom: 1px solid #ddd;
+}
+.list .text span{
+    margin-right: 10px;
+    color:#999;
+}
