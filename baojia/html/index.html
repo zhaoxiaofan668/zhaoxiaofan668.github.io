@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>Title</title>
+</head>
+<body>
+<img id="fangxiangpan" class="fangxiangpan" src="../img/fangxiangpan1.png" alt="">
+<script src="../js/jquery.min.js"></script>
+<script src="../js/touch-0.2.14.min.js"></script>
+<script>
+        console.log('000');
+        var index=2;
+        var angle = 0;
+        touch.on('.fangxiangpan','touchstart',function (ev){
+            console.log('1111');
+            ev.startRotate();
+            ev.preventDefault();
+        });
+        touch.on('.fangxiangpan','rotate', {interval: 10},function (ev){
+            // var isLeft = true;
+            console.log('2222');
+            var totalAngle = angle + ev.rotation;
+            if (ev.fingerStatus === 'end'){
+                angle  = angle + ev.rotation;
+                if (ev.direction == 'left'){
+                    index = index+1>8?8:index+1;
+                }else if (ev.direction == 'right'){
+                    index = index-1<2?2:index-1;
+                }
+            }
+            console.log(totalAngle + ":" + ev.direction);
+            this.style.webkitTransform = 'rotate(' + totalAngle + 'deg)';
+        });
+
+
+</script>
+</body>
+</html>

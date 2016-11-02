@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/touch-0.2.14.min.js"></script>
+    <title>方向盘</title>
+
+</head>
+<body>
+<img class="target" src="../img/fangxiangpan1.png" alt=""/>
+<script>
+    var index = 2;
+    var angle = 0;
+    touch.on('.target', 'touchstart',function(ev) {
+        console.log('1111');
+        ev.startRotate();
+        ev.preventDefault();
+    });
+
+    touch.on('.target', 'rotate',{interval: 10},  function(ev) {
+        console.log('2222');
+        var totalAngle = angle + ev.rotation;
+        if (ev.fingerStatus === 'end') {
+            angle = angle + ev.rotation;
+            if (ev.direction == "left") {
+                index = index+1>8?8:index+1;
+            } else if (ev.direction == "right") {
+                index = index - 1 < 2 ? 2 : index - 1;
+            }
+        }
+        this.style.webkitTransform = 'rotate(' + totalAngle + 'deg)';
+    })
+
+</script>
+</body>
+</html>
