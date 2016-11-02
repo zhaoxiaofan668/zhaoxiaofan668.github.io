@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <title></title>
+        <link rel="stylesheet" href="../css/job.css"/>
+        <link rel="stylesheet" href="../css/jobanimations.css"/>
+        <link rel="stylesheet" href="../css/animations.css"/>
+        <!--<script src="../js/touch.js"></script>-->
+        <script src="../js/touch-0.2.14.min.js"></script>
+        <script src="../js/jquery.min.js"></script>
+        <!--<script src="../binnng/slip.js/dist/min.slip.js"></script>-->
+    </head>
+ <body>
+ <!--音乐-->
+ <div id="musicControl">
+        <a id="mc_play" class="on" onclick="play_music();">
+            <audio id="musicfx" loop="loop" autoplay="autoplay">
+                <source src="1.mp3" type="audio/mp3">
+            </audio>
+        </a>
+ </div>
+ <script>
+     function play_music(){
+         if ($('#mc_play').hasClass('on')){
+             $('#mc_play audio').get(0).pause();
+             $('#mc_play').attr('class','stop');
+         }else{
+             $('#mc_play audio').get(0).play();
+             $('#mc_play').attr('class','on');
+         }
+         $('#music_play_filter').hide();
+         event.preventDefault(); //阻止冒泡
+     }
+     function just_play(id){
+         $('#mc_play audio').get(0).play();
+         $('#mc_play').attr('class','on');
+         if (typeof(id)!='undefined'){
+             $('#music_play_filter').hide();
+         }
+         event.preventDefault(); //阻止冒泡
+     }
+//     var play_filter=document.getElementById('music_play_filter');
+//     play_filter.addEventListener('click', function(){
+//         just_play(1);
+//     });
+</script>
+ <div class="page">
+
+    <div class="same page1">
+        <div class="box">
+            <img class="page1Image1" src="../img/t1-text.png" alt=""/>
+            <img class="page1Image2" src="../img/t1-yuan.png" alt=""/>
+            <img class="page1Image3" src="../img/icon_up.png" alt=""/>
+        </div>
+    </div>
+     <div class="same page2">
+         <div class="box">
+            <img class="page2Image1" src="../img/t2-2.png" alt=""/>
+            <img class="page2Image2" src="../img/t2-3.png" alt=""/>
+            <img class="page2Image3" src="../img/icon_up.png" alt=""/>
+         </div>
+    </div>
+    <div class="same page3">
+        <div class="box">
+            <img class="page3Image1" src="../img/t3-2.png" alt=""/>
+            <img class="page3Image2" src="../img/t3-1.png" alt=""/>
+            <img class="page3Image3" src="../img/icon_up.png" alt=""/>
+        </div>
+    </div>
+    <div class="same page4">
+        <div class="box">
+            <img class="page4Image1" src="../img/t4-1.png" alt=""/>
+            <img class="page4Image2" src="../img/t4-2.png" alt=""/>
+            <img class="page4Image3" src="../img/t4-3.png" alt=""/>
+            <img class="page4Image4" src="../img/icon_up.png" alt=""/>
+        </div>
+    </div>
+    <div class="same page5">
+        <div class="box">
+            <img class="page5Image1" src="../img/t5-1.png" alt=""/>
+            <img class="page5Image2" src="../img/t5-2.png" alt=""/>
+            <img class="page5Image3" src="../img/t5-3.png" alt=""/>
+            <img class="page5Image4" src="../img/icon_up.png" alt=""/>
+        </div>
+    </div>
+    <div class="same page6">
+        <div class="box">
+            <img class="page6Image1" src="../img/t6-1.png" alt=""/>
+            <img class="page6Image2" src="../img/t6-2.png" alt=""/>
+            <img class="page6Image3" src="../img/t6-3.png" alt=""/>
+            <img class="page6Image4" src="../img/icon_up.png" alt=""/>
+        </div>
+    </div>
+    <div class="same page7">
+        <div class="box">
+            <img class="page7Image1" src="../img/t7-1.png" alt=""/>
+            <img class="page7Image2" src="../img/t7-2.png" alt=""/>
+            <img class="page7Image3" src="../img/t7-3.png" alt=""/>
+            <img class="page7Image4" src="../img/icon_up.png" alt=""/>
+        </div>
+    </div>
+    <div class="same page8">
+        <div class="box">
+            <img class="page8Image1" src="../img/t8-1.png" alt=""/>
+            <img class="page8Image2" src="../img/t8-2.png" alt=""/>
+            <img class="page8Image3" src="../img/t8-3.png" alt=""/>
+            <img class="page8Image4" src="../img/icon_up.png" alt=""/>
+        </div>
+    </div>
+    <div class="same page9">
+        <div class="box">
+            <img class="page9Image1" src="../img/t9-1.png" alt=""/>
+            <img class="page9Image2" src="../img/t9-2.png" alt=""/>
+            <!--<img class="page9Image3" src="../img/t9-3.png" alt=""/>-->
+            <img class="page9Image3" src="../img/icon_up.png" alt=""/>
+        </div>
+    </div>
+    <div class="same page10">
+        <div class="box">
+            <img class="page10Image1" src="../img/t10-1.png" alt=""/>
+            <div class="page10text">
+                <h2>中通快递股份有限公司招聘</h2>
+                <p>电话:021-69787567</p>
+                <p>邮箱:zp-hr@zto.cn</p>
+            </div>
+            <img class="page10Image2" src="../img/t10-3.png" alt=""/>
+            <img class="page10Image3" src="../img/t10-5.png" alt=""/>
+            <!--<img class="page10Image4" src="../img/t10-2.png" alt=""/>-->
+            <img class="page10Image4" src="../img/t10-4.png" alt=""/>
+        </div>
+    </div>
+ </div>
+ <!--<script>-->
+     <!--var container = document.querySelector('.page');-->
+     <!--var pages = document.querySelectorAll('.same');-->
+     <!--var slip = Slip(container, 'y').webapp(pages);-->
+ <!--</script>-->
+ <script>
+     window.addEventListener('touchmove',function (e) {
+         e.preventDefault();
+     })
+    /* var y,y1;
+     window.addEventListener('touchstart',function(e){
+         y= e.touches[0].pageY;
+     })
+     window.addEventListener('touchmove',function(e){
+         y1= e.touches[0].pageY;
+     })
+     window.addEventListener('touchend',function(e){
+         if(Math.abs(y1-y)>10){
+             if(y1>y){
+                 index=index-1<=1?1:index-1;
+             }
+             else{
+                 index=index+1>=10?10:index+1;
+             }
+             animate()
+         }
+     })*/
+     var index=1;
+     $('.same:eq(0)').addClass('active');
+     touch.on(document.querySelector('.page'),'swipe',function (ev) {
+         if (ev.direction == "up") {
+             index=index+1>=10?10:index+1;
+         } else if (ev.direction == "down") {
+             index=index-1<=1?1:index-1;
+         }
+         animate()
+     })
+
+     function animate() {
+         console.log(index)
+         $('.same').removeClass('active');
+         $('.same:eq('+(index-1)+')').addClass('active');
+         $('.page').css({'-webkit-transform':'translate3d(0,-'+(index-1)/10*100+'%,0)','transform':'translate3d(0,-'+(index-1)/10*100+'%,0)'})
+     }
+ </script>
+ <!--<script>-->
+     <!--var audio=$('media');-->
+     <!--function $(a){-->
+         <!--return document.getElementById(a);-->
+     <!--}-->
+     <!--//暂停-->
+     <!--$('pause').onclick=function(){-->
+         <!--audio.pause();-->
+     <!--}-->
+     <!--//播放-->
+     <!--$('play').onclick=function(){-->
+         <!--audio.play();-->
+     <!--}-->
+     <!--//快进-->
+     <!--$('forward').onclick=function(){-->
+         <!--audio.currentTime+=5;-->
+     <!--}-->
+     <!--//快退-->
+     <!--$('back').onclick=function(){-->
+         <!--audio.currentTime-=5;-->
+     <!--}-->
+     <!--//换歌-->
+     <!--$('controls').onclick=function(){-->
+         <!--audio.controls=!audio.controls;-->
+     <!--}-->
+
+     <!--//加声音-->
+     <!--$('plus').onclick=function(){-->
+         <!--audio.volume+0.1<=1&&(audio.volume+=0.1);-->
+     <!--}-->
+     <!--//减声音-->
+     <!--$('minus').onclick=function(){-->
+         <!--audio.volume-0.1>=0&&(audio.volume-=0.1);-->
+     <!--}-->
+     <!--//-->
+     <!--$('change').onclick=function(){-->
+
+         <!--if(audio.src.indexOf('1.mp3')>=0){-->
+             <!--audio.src='2.mp3';-->
+         <!--}-->
+         <!--else{-->
+             <!--audio.src='1.mp3'-->
+         <!--}-->
+     <!--}-->
+
+     <!--//静音-->
+     <!--$('muted').onclick=function(){-->
+         <!--audio.muted=!audio.muted;-->
+     <!--}-->
+
+     <!--//加载事件-->
+     <!--addEvent('loadstart',function(){-->
+         <!--console.log('正在加载');-->
+     <!--});-->
+
+     <!--//加载事件-->
+     <!--addEvent('pause',function(){-->
+         <!--console.log('暂停播放');-->
+     <!--});-->
+
+     <!--//加载事件-->
+     <!--addEvent('timeupdate',function(e){-->
+         <!--//console.log(e.target.currentTime);-->
+     <!--});-->
+     <!--addEvent('seeking',function(e){-->
+         <!--console.log(audio.seekable);-->
+     <!--});-->
+     <!--function addEvent(name,callback){-->
+         <!--audio.addEventListener(name,function(e){-->
+             <!--callback(e);-->
+         <!--});-->
+     <!--}-->
+
+
+ <!--</script>-->
+ </body>
+</html>

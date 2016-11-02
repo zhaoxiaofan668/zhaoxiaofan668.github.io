@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title></title>
+    <link rel="stylesheet" href="../css/job.css"/>
+
+</head>
+ <body>
+ <div class="page">
+    <div class="page1">
+            <img class="page1Image1" src="../img/t1-text.png" alt=""/>
+            <img class="page1Image2" src="../img/t1-yuan.png" alt=""/>
+            <img class="page1Image3" src="../img/icon_up.png" alt=""/>
+    </div>
+
+    <div class="page2">
+        <img class="page2Image1" src="../img/t2-2.png" alt=""/>
+        <img class="page2Image2" src="../img/t2-3.png" alt=""/>
+        <img class="page2Image3" src="../img/icon_up.png" alt=""/>
+    </div>
+    <div class="page3">
+        <img class="page3Image1" src="../img/t3-2.png" alt=""/>
+        <img class="page3Image2" src="../img/t3-1.png" alt=""/>
+        <img class="page3Image3" src="../img/icon_up.png" alt=""/>
+    </div>
+    <div class="page4">
+        <img class="page4Image1" src="../img/t4-1.png" alt=""/>
+        <img class="page4Image2" src="../img/t4-2.png" alt=""/>
+        <img class="page4Image3" src="../img/t4-3.png" alt=""/>
+        <img class="page4Image4" src="../img/icon_up.png" alt=""/>
+    </div>
+    <div class="page5">
+        <img class="page5Image1" src="../img/t5-1.png" alt=""/>
+        <img class="page5Image2" src="../img/t5-2.png" alt=""/>
+        <img class="page5Image3" src="../img/t5-3.png" alt=""/>
+        <img class="page5Image4" src="../img/icon_up.png" alt=""/>
+    </div>
+    <div class="page6">
+        <img class="page6Image1" src="../img/t6-1.png" alt=""/>
+        <img class="page6Image2" src="../img/t6-2.png" alt=""/>
+        <img class="page6Image3" src="../img/t6-3.png" alt=""/>
+        <img class="page6Image4" src="../img/icon_up.png" alt=""/>
+    </div>
+    <div class="page7">
+        <img class="page7Image1" src="../img/t7-1.png" alt=""/>
+        <img class="page7Image2" src="../img/t7-2.png" alt=""/>
+        <img class="page7Image3" src="../img/t7-3.png" alt=""/>
+        <img class="page7Image4" src="../img/icon_up.png" alt=""/>
+
+    </div>
+    <div class="page8">
+        <img class="page8Image1" src="../img/t8-1.png" alt=""/>
+        <img class="page8Image2" src="../img/t8-2.png" alt=""/>
+        <img class="page8Image3" src="../img/t8-3.png" alt=""/>
+        <img class="page8Image4" src="../img/icon_up.png" alt=""/>
+    </div>
+    <div class="page9">
+        <img class="page9Image1" src="../img/t9-1.png" alt=""/>
+        <img class="page9Image2" src="../img/t9-2.png" alt=""/>
+        <!--<img class="page9Image3" src="../img/t9-3.png" alt=""/>-->
+        <img class="page9Image3" src="../img/icon_up.png" alt=""/>
+    </div>
+    <div class="page10">
+        <img class="page10Image1" src="../img/t10-1.png" alt=""/>
+        <div class="page10text">
+            <h2>中通快递股份有限公司招聘</h2>
+            <p>电话:021-69787567</p>
+            <p>邮箱:zp-hr@zto.cn</p>
+        </div>
+        <img class="page10Image2" src="../img/t10-3.png" alt=""/>
+        <img class="page10Image3" src="../img/t10-5.png" alt=""/>
+        <!--<img class="page10Image4" src="../img/t10-2.png" alt=""/>-->
+        <img class="page10Image4" src="../img/t10-4.png" alt=""/>
+    </div>
+ </div>
+ <script>
+     var pages=document.querySelector('.page');
+     index=0;
+     window.addEventListener('DOMMouseScroll',throttle(move,100))
+     window.onmousewheel=throttle(move,100);
+
+     function move(e){
+         var delta=e.wheelDelta||e.detail;
+         if(delta>0){
+             index=index+1>9?9:index+1;
+         }else{
+             index=index-1<0?0:index-1;
+         }
+
+//        -moz代表firefox浏览器私有属性，
+//        -ms代表ie浏览器私有属性，
+//        -webkit代表safari、chrome私有属性
+         pages.style.transform='translateY(-'+index*10+'%)'
+         pages.style.webkitTransform='translateY(-'+index*10+'%)'
+         pages.style.msTransform='translateY(-'+index*10+'%)'
+         pages.style.mozTransform='translateY(-'+index*10+'%)'
+     }
+     /*
+      * 函数节流
+      * */
+     function throttle(fn,delay){
+         var timer=null;
+         return function(){
+             var context=this;
+             var ars=arguments;
+             clearTimeout(timer);
+             timer=setTimeout(function(){
+                 fn.apply(context,ars);
+             },delay)
+         }
+     }
+ </script>
+</body>
+</html>
